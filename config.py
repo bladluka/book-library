@@ -15,7 +15,7 @@ class Config:
 
 
 class DevelopmentConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = os.environ.get("CLEARDB_DATABASE_URL")
 
 
 class TestingConfig(Config):
@@ -25,4 +25,16 @@ class TestingConfig(Config):
     TESTING = True
 
 
-config = {"development": DevelopmentConfig, "testing": TestingConfig}
+class ProductionConfig(Config):
+    DB_HOST = os.environ.get("")
+    DB_USERNAME = os.environ.get("")
+    DB_PASSWORD = os.environ.get("")
+    DB_NAME = os.environ.get("")
+    SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_NAME}?charset=utf8mb4"
+
+
+config = {
+    "development": DevelopmentConfig,
+    "testing": TestingConfig,
+    "production": ProductionConfig,
+}

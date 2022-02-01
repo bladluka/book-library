@@ -12,3 +12,5 @@ instance/
 .pytest_cache/
 .coverage
 htmlcov/
+
+application.py
