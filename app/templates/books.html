@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books view</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+<table class="table">
+   <thead>
+     <tr>
+       <th class="col-2">Title</th>
+       <th class="col-1">ISBN</th>
+       <th class="col-1">Number of pages</th>
+       <th class="col-2">Published date</th>
+       <th class="col-1">Language</th>
+       <th class="col-1">Info link</th>
+       <th class="col-2">Authors</th>
+       <th class="col-1"></th>
+     </tr>
+   </thead>
+   <tbody>
+       {% for book in books %}
+     <tr>
+       <td>
+           <a href="{{ url_for('books.edit_book', book_id=book.id) }}">
+               {{ book.title }}
+           </a>
+       </td>
+       <td>
+           {{ book.isbn }}
+       </td>
+       <td>
+           {{ book.number_of_pages }}
+       </td>
+       <td>
+           {{ book.published_date }}
+       </td>
+       <td>
+           {{ book.language }}
+       </td>
+       <td>
+           <a href="{{ book.info_link }}">{{ book.info_link|truncate(20, true) }}</a>
+       </td>
+       <td>{{ book.stringAuthors }}</td>
+        <form action="/delete/book/{{ book.id }}" method="POST">
+         <td>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+             <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+         </td>
+        </form>
+     </tr>
+     {% endfor %}
+   </tbody>
+ </table>
+
+{% endblock %}
+</body>
+</html>

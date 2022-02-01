@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Google API</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<h3>
+   Add books from Google API
+</h3>
+    <form action="/google/books" method="POST">
+    <input class="form-control col" type="text" placeholder="e.g Hobbit" aria-label="Search" name="search_value">
+      <button type="submit" class="btn btn-primary mt-5">Add</button>
+    </form>
+{% endblock %}
+</body>
+</html>

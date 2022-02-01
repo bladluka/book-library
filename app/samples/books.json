@@ -1,0 +1,114 @@
+[
+  {
+    "title": "Animal Farm",
+    "isbn": 9780141036137,
+    "number_of_pages": 112,
+    "published_date": "2021-01-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "1984",
+    "isbn": 9780679417392,
+    "number_of_pages": 325,
+    "published_date": "2021-01-16",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Old Man and the Sea",
+    "isbn": 9780435122164,
+    "number_of_pages": 96,
+    "published_date": "2022-01-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Matilda: Be Outrageous",
+    "isbn": 9781524793616,
+    "number_of_pages": 32,
+    "published_date": "2022-01-10",
+    "language": "en",
+    "info_link": ""
+  },
+  {
+    "title": "Timequake",
+    "isbn": 9780099267546,
+    "number_of_pages": 240,
+    "published_date": "2019-01-01",
+    "language": "en",
+    "info_link": ""
+  },
+  {
+    "title": "It",
+    "isbn": 9781473666931,
+    "number_of_pages": 1392,
+    "published_date": "2018-01-01",
+    "language": "en",
+    "info_link": ""
+  },
+  {
+    "title": "Hunger Games",
+    "isbn": 9781407188935,
+    "number_of_pages": 448,
+    "published_date": "2017-01-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Catching Fire",
+    "isbn": 9781407188911,
+    "number_of_pages": 448,
+    "published_date": "2016-01-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Mockingjay",
+    "isbn": 9781407132105,
+    "number_of_pages": 464,
+    "published_date": "2015-01-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Origin",
+    "isbn": 9780525563709,
+    "number_of_pages": 656,
+    "published_date": "2014-01-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Inferno",
+    "isbn": 9781400079155,
+    "number_of_pages": 624,
+    "published_date": "2014-02-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Lovely Bones",
+    "isbn": 9780330485388,
+    "number_of_pages": 336,
+    "published_date": "2013-01-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Last Wish",
+    "isbn": 9781473226401,
+    "number_of_pages": 288,
+    "published_date": "2013-02-01",
+    "language": "pl",
+    "info_link": ""
+  },
+  {
+    "title": "Flights",
+    "isbn": 9781910695432,
+    "number_of_pages": 400,
+    "published_date": "2012-01-01",
+    "language": "en",
+    "info_link": ""
+  }
+]

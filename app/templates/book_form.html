@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h3>
+   Add new book (under construction :-))
+</h3>
+
+<form>
+  {{form.hidden_tag()}}
+   <div class="form-group">
+       <label for="title">Title</label>
+       {{ form.title(class_="form-control") }}
+   </div>
+   <div class="form-group">
+       <label for="isbn">ISBN</label>
+       {% if errors and errors.isbn %}
+           {{ form.isbn(class_="form-control is-invalid") }}
+       {% else %}
+           {{ form.isbn(class_="form-control") }}
+       {% endif %}
+       <div class="invalid-feedback">{{ errors.isbn|join(' ') }}</div>
+   </div>
+    <div class="form-group">
+       <label for="number_of_pages">Number of pages</label>
+       {{ form.number_of_pages(class_="form-control") }}
+   </div>
+    <div class="form-group">
+       <label for="published_date">Published date</label>
+       {{ form.published_date(class_="form-control") }}
+   </div>
+    <div class="form-group">
+       <label for="language">Language</label>
+       {{ form.language(class_="form-control") }}
+   </div>
+    <div class="form-group">
+       <label for="info_link">Info link</label>
+       {{ form.info_link(class_="form-control") }}
+   </div>
+<!--    <div class="form-group">-->
+<!--       <label for="authors">Authors</label>-->
+<!--       {{ form.authors(class_="form-control") }}-->
+<!--   </div>-->
+   <button type="submit" class="btn btn-primary mt-5">Save</button>
+</form>
+
+{% endblock %}

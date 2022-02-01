@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="description" content="">
+ <title>Book library</title>
+
+ <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+
+ <!-- Bootstrap core CSS -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+   integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+ <style>
+   body {
+     padding-top: 5rem;
+   }
+ </style>
+</head>
+
+<body>
+ <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+   <a class="navbar-brand" href="/books">Book library</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+     aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+     <ul class="navbar-nav mr-auto">
+         <li class="nav-item">
+             <a class="nav-link mr-sm" href="/new-book">Add book</a></li>
+            <li><a class="nav-link mr-sm" href="/google/books">Google API</a>
+         </li>
+     </ul>
+      <input class="form-control col-lg-1 mr-sm-2" type="text" placeholder="title" aria-label="Search" id="search_title">
+      <button class="btn btn-outline-info mr-sm-5" id="search_title_button">Search</button>
+       <input class="form-control col-lg-1 mr-sm-2" type="text" placeholder="author" aria-label="Search" id="search_author">
+      <button class="btn btn-outline-info mr-sm-5" id="search_author_button">Search</button>
+       <input class="form-control col-lg-1 mr-sm-2" type="text" placeholder="language" aria-label="Search" id="search_language">
+      <button class="btn btn-outline-info mr-lg-5" id="search_language_button">Search</button>
+       <input class="form-control col-lg-2 mr-sm-2 mr-sm-2" type="text" placeholder="published date from"
+                    onfocus="(this.type='date')" aria-label="Search" id="search_from">
+       <input class="form-control col-sm-2 mr-sm-2 mr-sm-2" type="text" placeholder="published date to"
+                    onfocus="(this.type='date')" aria-label="Search" id="search_to">
+      <button class="btn btn-outline-info mr-sm-2" id="search_date_button">Search</button>
+   </div>
+ </nav>
+
+ <main role="main" class="container">
+
+    {% with messages = get_flashed_messages() %}
+     {% if messages %}
+      {% for message in messages %}
+       <div class="alert alert-info mt-3" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+        </button>
+       </div>
+      {% endfor %}
+     {% endif %}
+    {% endwith %}
+
+   {% block content %}
+   {% endblock %}
+
+ </main><!-- /.container -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+   crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+   integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+   crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+   integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+   crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+    document.getElementById("search_title_button").onclick = function () {
+    const value = document.getElementById("search_title").value;
+    location.href = "/books?title=" + value;
+    };
+
+    document.getElementById("search_author_button").onclick = function () {
+    const value = document.getElementById("search_author").value;
+    location.href = "/books?author=" + value;
+    };
+
+    document.getElementById("search_language_button").onclick = function () {
+    const value = document.getElementById("search_language").value;
+    location.href = "/books?language=" + value;
+    };
+
+    document.getElementById("search_date_button").onclick = function () {
+    const value = document.getElementById("search_from").value;
+    const value2 = document.getElementById("search_to").value;
+    location.href= "/books?published_date[gte]=" + value + "&published_date[lte]=" + value2;
+    };
+
+    </script>
+
+</body>
+</html>
